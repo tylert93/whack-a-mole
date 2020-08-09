@@ -1,0 +1,97 @@
+html{
+    font-size:16px;
+}
+
+body{
+    background:#512700;
+    margin:0;
+    font-family: 'Comfortaa', cursive;
+}
+
+.square{
+    width:28%;
+    height:28%;
+    border-style:solid;
+    border-color: #512700;
+    border-radius:50%;
+    margin:2%;
+    background:#000;
+}
+
+.grid{
+    display:flex;
+    flex-flow:row wrap;
+    align-content: center;
+    justify-content: center;
+    width:90vw;
+    height:90vw;
+    max-width:34rem;
+    max-height:34rem;
+    margin:1rem auto;
+    
+}
+
+.grid:hover{
+    cursor: url(imgs/hammer3.png), auto;
+}
+
+.mole{
+    background-image: url(imgs/mole3.png);
+    background-size:cover;
+}
+
+#reset{
+    display:none;
+}
+
+h1, h3{
+    margin:0;
+    display:inline;
+}
+
+.header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background:green;
+    color:#fff;
+    padding:1rem 3rem;
+}
+
+#buttons{
+    text-align: center;
+    cursor:pointer;
+    border:solid 0.1875rem #fff;
+    border-radius: 0.3125rem;
+    padding:0.375rem;
+}
+
+#buttons:hover{
+    background:#fff;
+    color:green;
+}
+
+.hammerDown{
+    cursor:url(imgs/hammerDown2.png), auto;
+}
+
+#score{
+    margin-right:1.25rem;
+}
+
+@media (max-width: 830px) {
+    .header{
+        flex-direction: column;
+        justify-content: center;
+        padding:1.5rem 0 1.5rem 1.5rem;
+    }
+
+    #title, #track{
+        align-self: flex-start;
+    }
+
+    #buttons{
+        align-self: auto;
+        margin-left:16rem;
+    }
+}
