@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", () =>{
     //create variables    
-    const square = document.querySelectorAll(".square");
-    const mole = document.querySelectorAll(".mole");
-    const timeLeft = document.querySelector("#time-left");
+    const square = document.querySelectorAll(".square"),
+          mole = document.querySelectorAll(".mole"),
+          timeLeft = document.querySelector("#time-left"),
+          start = document.querySelector("#start"),
+          reset = document.querySelector("#reset");
+
     let score = document.querySelector("#score");
-    let currentTime = timeLeft.textContent;
-    let result = 0;
-    var playing = false;
-    const start = document.querySelector("#start");
-    const reset = document.querySelector("#reset");
-    let hitPosition = null;
+        currentTime = timeLeft.textContent;
+        result = 0;
+        playing = false;
+        hitPosition = null;
+
     //start the game when the player commands
-    start.addEventListener("click", function(){
-        this.style.display = "none";
+    start.addEventListener("click", () => {
+        start.style.display = "none";
         reset.style.display = "block";
         playing = true;
         moveMole();
@@ -37,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
     })
     //reset the game when the player commands
-    reset.addEventListener("click", function(){
+    reset.addEventListener("click", () => {
         location = location;
     })
     //check if a mole has been whacked
-    square.forEach(function(item){
+    square.forEach((item) => {
         item.addEventListener("mouseup", () =>{
             if(item.id === hitPosition){
                 result = result + 1;
@@ -64,12 +66,12 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
     //remove the mole from the gameboard and 
     function removeMoles(){
-        square.forEach(className =>{
+        square.forEach(className => {
             className.classList.remove("mole");
         });
     }
     //animate the hammer hitting when a square is clicked
-    square.forEach(function(item){
+    square.forEach((item) => {
         item.addEventListener("mousedown", function(){
             this.classList.add("hammerDown");
         });
